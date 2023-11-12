@@ -161,7 +161,7 @@ function TopBar({setBoardData, boardData}) {
                 <input onChange={(e) => handleEdit(e.target.value)} value={inputValue}
                 type="text" placeholder="Search for tasks ..."
                 className="bg-transparent border-0 text-white placeholder-gray-200
-                outline-none focus:ring-0 text-lg pr-[40rem]"/>
+                outline-none focus:ring-0 text-lg pr-[35rem]"/>
                 <button onClick={handleResetData} className="text-white text-lg font-bold bg-red-600 rounded-sm px-4 py-2">Reset</button>
             </div>
             <div className="flex space-x-6 items-center">
