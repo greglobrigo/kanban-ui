@@ -78,9 +78,7 @@ function CardItem({ data, index, boardData, setBoardData, name }) {
                   ? "Medium Priority"
                   : "High Priority"}
             </label>
-            <PencilIcon
-              onClick={() => setWillEdit(!willEdit)} className="w-4 h-5 cursor-pointer hover:bg-gray-100 rounded-full"
-            />
+            <PencilIcon onClick={() => setWillEdit(!willEdit)} className="w-4 h-5 cursor-pointer hover:bg-gray-100 rounded-full" />
           </div>
           {!willEdit && <h5 className="text-md my-3 text-lg leading-6">{inputValue}</h5>}
           {willEdit && <input onChange={(e) => handleEdit(e)} onKeyPress={(e) => {e.key === 'Enter' && setWillEdit(!willEdit)}}

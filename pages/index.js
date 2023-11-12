@@ -9,6 +9,7 @@ import {
 } from "@heroicons/react/outline";
 import CardItem from "../components/CardItem";
 import BoardData from "../data/board-data.json";
+import TopBar from "../components/TopBar";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { useEffect, useState } from "react";
 
@@ -76,11 +77,14 @@ export default function Home() {
 
   return (
     <Layout>
+      <TopBar
+      boardData={boardData}
+      setBoardData={setBoardData}/>
       <div className="p-10 flex flex-col h-screen">
         {/* Board header */}
         <div className="flex flex-initial justify-between">
           <div className="flex items-center">
-            <h4 className="text-4xl font-bold text-gray-600">Studio Board</h4>
+            <h4 className="text-4xl font-bold text-gray-600">Scrum Board</h4>
             <ChevronDownIcon
               className="w-9 h-9 text-gray-500 rounded-full
             p-1 bg-white ml-5 shadow-xl"
