@@ -173,7 +173,6 @@ export default function Home() {
                                 })}
                               {provided.placeholder}
                             </div>
-                            
                             {
                               showForm && selectedBoard === bIndex ? (
                                 <div className="p-3">
