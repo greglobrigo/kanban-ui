@@ -162,7 +162,7 @@ function TopBar({setBoardData, boardData}) {
                 type="text" placeholder="Search for tasks ..."
                 className="bg-transparent border-0 text-white placeholder-gray-200
                 outline-none focus:ring-0 text-lg pr-[40rem]"/>
-                <button onClick={handleResetData} className="text-white text-lg font-bold">Reset</button>
+                <button onClick={handleResetData} className="text-white text-lg font-bold bg-red-600 rounded-sm px-4 py-2">Reset</button>
             </div>
             <div className="flex space-x-6 items-center">
                 <AtSymbolIcon className="w-7 h-7 text-white"/>
