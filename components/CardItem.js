@@ -9,7 +9,27 @@ import {
 } from "@heroicons/react/outline";
 import { Draggable } from "react-beautiful-dnd";
 
-function CardItem({ data, index }) {
+function CardItem({ data, index, boardData, setBoardData, name }) {
+
+  const changePriority = () => {
+   let newBoardData = boardData.map((board) => {
+      if (board.name === name) {
+        let newItems = board.items.map((item) => {
+          if (item.id === data.id) {
+            let newPriority = item.priority + 1;
+            if (newPriority > 2) newPriority = 0;
+            item.priority = newPriority;
+          }
+          return item;
+        });
+        board.items = newItems;
+      }
+      return board;
+    });
+    setBoardData(newBoardData);
+  }
+
+
   return (
     <Draggable index={index} draggableId={data.id.toString()}>
       {(provided) => (
@@ -19,9 +39,9 @@ function CardItem({ data, index }) {
           {...provided.dragHandleProps}
           className="bg-white rounded-md p-3 m-3 mt-0 last:mb-0"
         >
-          <label
+          <label onClick={() => changePriority()}
             className={`bg-gradient-to-r
-              px-2 py-1 rounded text-white text-sm
+              px-2 py-1 rounded text-white text-sm cursor-pointer
               ${
                 data.priority === 0
                   ? "from-blue-600 to-blue-400"

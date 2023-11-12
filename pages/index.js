@@ -163,7 +163,10 @@ export default function Home() {
                                     <CardItem
                                       key={item.id}
                                       data={item}
+                                      name={board.name}
                                       index={iIndex}
+                                      boardData={boardData}
+                                      setBoardData={setBoardData}
                                       className="m-3"
                                     />
                                   );
